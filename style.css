@@ -17,7 +17,7 @@ body {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
-    background-color: var(--cor03);
+    background-color: var(--cor04);
 }
 
 header {
@@ -78,10 +78,13 @@ nav > a:hover {
 }
 
 #homeart {
-    height: 498px;
+    background-image: url("imagens-header/man-7750139_1920.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 570px;
     color: white;
-    padding: 10px;
-    margin: 10px;
+   
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -119,11 +122,10 @@ nav > a:hover {
 }
 
 #about {
-    background-color: #3C308C;
+    background-image: linear-gradient(to bottom, #181240, #3C308C);
     height: 500px;
-    border-radius: 20px 20px;
-    padding: 10px;
-    margin: 10px;
+    box-shadow: 3px solid black;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -147,9 +149,7 @@ nav > a:hover {
 #experience {
     background-color: #3C308C;
     height: 520px;
-    border-radius: 20px 20px;
-    padding: 10px;
-    margin: 10px;
+    
 }
 
 #experience > article{
@@ -251,8 +251,6 @@ footer{
     background-color: #0E0B26;
     height: 30px;
     color: white;
-    border-radius: 20px 20px;
-    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
