@@ -22,13 +22,11 @@ body {
 
 header {
     background-color: #0E0B26;
-    height: 40px;
+    height: 20px;
+    padding: 20px;
     display: block;
-    padding: 10px;
-    border-radius: 25px 0px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.856);
     color: var(--cor01);
-    margin: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -82,9 +80,8 @@ nav > a:hover {
     background-position: right bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 570px;
+    height: 620px;
     color: white;
-   
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -149,7 +146,6 @@ nav > a:hover {
 #experience {
     background-color: #3C308C;
     height: 520px;
-    
 }
 
 #experience > article{
@@ -185,9 +181,6 @@ nav > a:hover {
 
 #contacts {
     background-color: var(--cor02);
-    border-radius: 20px 20px;
-    padding: 10px;
-    margin: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
