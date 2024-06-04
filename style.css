@@ -124,7 +124,7 @@ nav > a:hover {
 
 #about {
     background-image: linear-gradient(to bottom, #181240, #3C308C);
-    height: 600px;
+    height: 650px;
     box-shadow: 3px solid black;
     display: flex;
     justify-content: space-between;
@@ -144,6 +144,46 @@ nav > a:hover {
 
 .traleft > p {
     color: rgb(153, 153, 153);
+}
+#technology {
+    height: 650px;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+
+
+}
+.techleft {
+    width: 50%;
+    font-size: 7rem;
+    text-align: left;
+    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.techright {
+    width: 50%;
+}
+.tecgeral {
+    
+    
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+    
+}
+.tec1 {
+    width: 120px;
+    
+    background-color: red;
+    margin: 20px;
 }
 
 #experience {
@@ -242,20 +282,20 @@ button {
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-.link {
-    margin-top: 20px;
-    margin: 40px;
-}
-
-footer{
+footer {
     background-color: #0E0B26;
-    height: 30px;
+    height: 100px;
     color: white;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
-
+.link {
+    margin: 30px;
+}
+.link2 {
+    margin-bottom: 50px;
+}
 @media (max-width: 768px) {
 
     body {
