@@ -19,11 +19,15 @@ body {
     font-style: normal;
     background-color: var(--cor04);
 }
-
+h1 {
+    margin: 0;
+    padding: 0;
+}
 header {
     background-color: #0E0B26;
     height: 20px;
     padding: 20px;
+    font-size: 20px;
     display: block;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.856);
     color: var(--cor01);
@@ -120,9 +124,8 @@ nav > a:hover {
 
 #about {
     background-image: linear-gradient(to bottom, #181240, #3C308C);
-    height: 500px;
+    height: 600px;
     box-shadow: 3px solid black;
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -238,6 +241,10 @@ button {
     -webkit-backdrop-filter: blur( 3.5px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.link {
+    margin-top: 20px;
+    margin: 40px;
 }
 
 footer{
