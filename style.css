@@ -227,6 +227,7 @@ nav > a:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 30px;
 }
 
 aside {
@@ -242,6 +243,9 @@ aside {
     align-items: center;
     text-align: center;
     color: rgb(241, 241, 241);
+}
+.geralcont1 {
+    
 }
 
 .geralcont a {
