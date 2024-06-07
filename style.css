@@ -123,7 +123,7 @@ nav > a:hover {
 }
 
 #about {
-    background-image: linear-gradient(to bottom, #181240, #3C308C);
+    background-image: var(--cor04);
     height: 650px;
     box-shadow: 3px solid black;
     display: flex;
