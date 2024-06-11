@@ -214,15 +214,26 @@ nav > a:hover {
 
 .cardexp {
     width: 550px;
-    border: 2px solid white;
+    border: 1px solid rgb(133, 133, 133);
+    border-radius: 10px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
-.cardexp > h1 {
+
+.cardexp:hover {
+    border: 2px solid white;
+    box-shadow: inset 8px rgb(54, 54, 54);
+    background-color: var(--cor02);
+
+
+}
+.cardexp > h1,a {
     font-size: 2rem;
     padding-bottom: 5px;
+    text-decoration: none;
+    color: white;
 }
 .cardexp1 > h2 {
     margin: 0px;
