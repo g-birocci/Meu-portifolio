@@ -209,19 +209,28 @@ nav > a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: black;
+    flex-wrap: wrap;
 }
 
-.exp {
-    width: 600px;
-    background-color: var(--cor01);
-    padding: 10px;
-    margin: 20px;
+.cardexp {
+    width: 550px;
+    border: 2px solid white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.cardexp > h1 {
+    font-size: 2rem;
+    padding-bottom: 5px;
+}
+.cardexp1 > h2 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1rem;
+    color: rgb(165, 165, 165);
 }
 
-.exp:hover {
-    box-shadow: 0 0 10px 4px blue;
-}
 .experienceright {
     width: 50%;
     font-size: 7rem;
