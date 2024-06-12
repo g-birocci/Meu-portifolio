@@ -4,6 +4,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Zen+Dots&display=swap');
+
+
 :root {
     --cor00: white;
     --cor01: #b3aca4;
@@ -69,6 +74,7 @@ nav {
 
 nav > a {
     color: #b3aca4;
+    font-size: 20px;
     font-weight: bold;
     text-decoration: none;
     margin-right: 50px;
@@ -80,11 +86,10 @@ nav > a:hover {
 }
 
 #homeart {
-    background-image: url("imagens-header/man-7750139_1920.png");
-    background-position: right bottom;
+    background-image: url("imagens-header/laptop-cort_1280.png");
     background-repeat: no-repeat;
-    background-size: cover;
-    height: 620px;
+    background-position: bottom center;
+    height: 546px;
     color: white;
     display: flex;
     justify-content: space-around;
@@ -92,13 +97,12 @@ nav > a:hover {
 }
 
 .nome {
-    font-family: "Poetsen One", sans-serif;
-    font-weight: 400;
+    font-family: "Changa", sans-serif;
+    
     font-style: normal;
-    font-size: 70px;
+    font-size: 3rem;
     color: rgb(244, 243, 238);
-    animation-iteration-count: infinite;
-    margin-left: 50px; 
+    animation-iteration-count: infinite; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,10 +120,12 @@ nav > a:hover {
 
 .perfil {
     width: 50%;
-    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.perfil > h1 {
+    color: black;
 }
 
 #about {
@@ -138,12 +144,37 @@ nav > a:hover {
     flex-direction: column;
     align-items: center;
     width: 50%;
-    margin: 10px 100px;
+    margin: 50px;
+}
+
+.traleftinsi {
+    padding: 50px 20px 20px 20px;
+    width: 400px;
+    background-color: #b3aca4;
+    color: black;
     text-align: justify;
+    
+}
+.traleftinsi > p {
+    padding: 8px;
 }
 
 .traleft > p {
     color: rgb(153, 153, 153);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.traright {
+    width: 50%;
+    font-size: 1rem;
+}
+.traright > a {
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
 }
 #technology {
     height: 650px;
@@ -154,22 +185,23 @@ nav > a:hover {
     display: flex;
     justify-content: space-around;
 
-
 }
-
 .techleft {
     width: 50%;
-    font-size: 7rem;
+    font-size: 6rem;
     text-align: left;
     margin-left: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .techright {
     width: 50%;
+    padding-top: 60px;
+}
+.techright > p {
+    text-align: start;
 }
 
 .tecgeral {
@@ -186,21 +218,12 @@ nav > a:hover {
     width: 100px;
     margin: 20px;
 }
-.tec1:hover {
-    box-shadow: 0 0 10px 4px blue;
-}
+
 #experience {
     background-color: var(--cor04);
     color: white;
     display: flex;
     justify-content: space-around;
-    position: sticky;
-}
-
-#positiony {
-    position: sticky;
-    bottom:500px;
-    text-align: center;
 }
 
 .experienceleft {
@@ -217,6 +240,7 @@ nav > a:hover {
     border: 1px solid rgb(133, 133, 133);
     border-radius: 10px;
     padding: 20px;
+    margin: 40px 20px 20px 20px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -244,14 +268,12 @@ nav > a:hover {
 
 .experienceright {
     width: 50%;
-    font-size: 7rem;
+    font-size: 6rem;
     text-align: left;
     margin-left: 50px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: sticky;
-    top:40px;
+    align-items: flex-start;
 }
 #projects {
     background-color: var(--cor04);
