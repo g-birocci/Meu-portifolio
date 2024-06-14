@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+@charset "UTF-8";
+
+:root {
+    --cor00: white;
+    --cor01: #b3aca4;
+    --cor02: #3C308C;
+    --cor03: #181240;
+    --cor04: #0E0B26;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--cor04);
+    color: var(--cor01);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formgeral {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.6px);
+    -webkit-backdrop-filter: blur(4.6px);
+    border: 1px solid rgba(255, 255, 255, 0.99);
+    padding: 20px;
+}
+label {
+    font-size: large;
+}
+input {
+    width: 500px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+label, input {
+    margin: 5px;
+}
+
+.button {
+    width: 100px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+.button:hover {
+    background-color: rgb(155, 155, 155);
+}
+    </style>
+</head>
+<body>
+    <h1>Obrigado por nos contactar</h1>
+    <div class="formgeral">
+        <form action="inserir.php">
+            <label for="nome">Nome(s):</label>
+            <input type="text" name="nome" size="50" maxlength="70" required>
+            <br>
+            <label for="nome">Apelido(s):</label>
+            <input type="text" name="nome" size="50" maxlength="70" required>
+            <br>
+            <label for="nome">E-mail:</label>
+            <input type="text" name="nome" size="50" maxlength="70" required>
+            <br>
+            <label for="nome">Telefone:</label>
+            <input type="text" name="nome" size="13" maxlength="15" required>
+            <br>
+            <label for="nome">Assunto:</label>
+            <input type="text" name="nome" size="50" maxlength="70" required>
+            <br>
+            <input class="button" type="submit" value="Inserir">
+            <input class="button" type="reset" value="Limpar">
+        </form>
+        <button><a href="index.html">Voltar</a></button>
+    </div>
+</body>
+</html>

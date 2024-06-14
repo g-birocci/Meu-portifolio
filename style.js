@@ -9,7 +9,7 @@ function menuTop(event) {
 
     let id = event.currentTarget.getAttribute('href');
     let alturaMenu = document.querySelector('nav').offsetHeight;
-    let distanciaTopo = document.querySelector(id).offsetTop - alturaMenu;
+    let distanciaTopo = document.querySelector[id].offsetTop - alturaMenu;
 
     window.scrollTo({
         top: distanciaTopo,

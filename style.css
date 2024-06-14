@@ -172,7 +172,10 @@ nav > a:hover {
     width: 50%;
     font-size: 14px;
     color: rgb(223, 221, 221);
-
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .trarighta {
     font-size: 15px;
@@ -186,23 +189,51 @@ nav > a:hover {
     font-size: 2em;
     margin-top: 20px;
     display: flex;
-    justify-content: space-around;
-
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
 }
-.techleft {
-    width: 50%;
-    font-size: 6rem;
-    text-align: left;
-    margin-left: 50px;
+.techtop {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.techright {
+.techtop > h1 {
     width: 50%;
-    padding-top: 60px;
+    font-size: 6rem;
+    text-align: left;
+    margin: 30px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.techbottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.techfoto {
+    width: 100px;
+    height: 100px;
+    background-color: #EFEFEF;
+    border: 6px solid #305A89;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.techfoto:hover {
+    background-color: black;
+    color: white;
+    transition: 1s;
+} 
+.techfoto > h1 {
+    font-size: 1rem;
+}
+
 
 
 #experience {
@@ -214,7 +245,6 @@ nav > a:hover {
 }
 
 .experiencetitle {
-
     font-size: 6rem;
     text-align: center;
     margin: 30px 0px 40px 0px;
@@ -281,6 +311,10 @@ nav > a:hover {
 
 .projectsright {
     width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .proj {
@@ -325,7 +359,7 @@ nav > a:hover {
 }
 
 footer {
-    background-color: var(--cor04);
+    background-color: var(--cor03);
     height: 100px;
     color: white;
     display: flex;
@@ -334,9 +368,15 @@ footer {
 }
 .link {
     margin: 30px;
+    background-color: var(--cor03);
 }
 .link2 {
-    margin-bottom: 50px;
+    
+}
+.link2 > h1 {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 8px;
 }
 @media (max-width: 768px) {
 
