@@ -8,6 +8,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Zen+Dots&display=swap');
 
+* {
+    scroll-behavior: smooth !important;
+}
 
 :root {
     --cor00: white;
@@ -24,6 +27,7 @@ body {
     font-style: normal;
     background-color: var(--cor04);
 }
+
 h1 {
     margin: 0;
     padding: 0;
