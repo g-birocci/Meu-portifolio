@@ -61,26 +61,33 @@ label, input {
 .button:hover {
     background-color: rgb(155, 155, 155);
 }
+@media (max-width: 768px) {
+    body {
+        margin: 10px;
+    }
+    .formgeral {
+        width: auto;
+    }
+    input {
+        width: auto;
+    }
+}
     </style>
 </head>
 <body>
     <h1>Obrigado por nos contactar</h1>
     <div class="formgeral">
         <form action="inserir.php">
-            <label for="nome">Nome(s):</label>
+            
+            <input type="text" name="nome" size="50" maxlength="70" required placeholder="Primeiro nome">
+            <br>
+            <input type="text" name="nome" size="50" maxlength="70" required placeholder="Apelido">
+            <br>
+            <input type="text" name="nome" size="50" maxlength="70" required placeholder="email@exemplo.com">
+            <br>
             <input type="text" name="nome" size="50" maxlength="70" required>
             <br>
-            <label for="nome">Apelido(s):</label>
-            <input type="text" name="nome" size="50" maxlength="70" required>
-            <br>
-            <label for="nome">E-mail:</label>
-            <input type="text" name="nome" size="50" maxlength="70" required>
-            <br>
-            <label for="nome">Telefone:</label>
-            <input type="text" name="nome" size="13" maxlength="15" required>
-            <br>
-            <label for="nome">Assunto:</label>
-            <input type="text" name="nome" size="50" maxlength="70" required>
+            <textarea name="Assunto" id="" cols="50" rows="10" placeholder="Descreva aqui o seu assunto!"></textarea>
             <br>
             <input class="button" type="submit" value="Inserir">
             <input class="button" type="reset" value="Limpar">
