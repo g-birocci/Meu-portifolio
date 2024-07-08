@@ -10,6 +10,7 @@
 
 * {
     scroll-behavior: smooth !important;
+    transition: 1s;
 }
 
 :root {
@@ -238,8 +239,6 @@ nav > a:hover {
     font-size: 1rem;
 }
 
-
-
 #experience {
     background-color: var(--cor04);
     color: white;
@@ -382,7 +381,7 @@ footer {
     color: white;
     margin-bottom: 8px;
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
 
     body {
         margin: 0px;
