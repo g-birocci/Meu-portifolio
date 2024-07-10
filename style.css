@@ -88,6 +88,7 @@ nav > a:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
+
 }
 
 .nome {
@@ -125,14 +126,13 @@ nav > a:hover {
 #about {
     background-image: var(--cor04);
     height: 100%;
-    border: 3px solid black; /* substituído box-shadow */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
     color: white;
     font-size: 20px;
-    margin-top: 150px;
+    margin-top: 100px;
+    
 }
 
 .traleft {
@@ -442,7 +442,9 @@ footer {
 
     #about {
         flex-direction: column;
+        flex-wrap: wrap;
         margin-top: 50px;
+        height: auto;
     }
 
     .traleft, .traright {
