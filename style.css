@@ -1,11 +1,8 @@
 @charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Zen+Dots&display=swap');
 
 * {
@@ -33,6 +30,7 @@ h1 {
     margin: 0;
     padding: 0;
 }
+
 header {
     background-color: #0E0B26;
     height: 20px;
@@ -46,24 +44,14 @@ header {
     align-items: center;
     position: sticky; 
     z-index: 10;
-    top:0;
-}
-/*
-#portofolio-title{
-    color: #999999;
-    text-decoration: none;
+    top: 0;
 }
 
-#home:hover > #portofolio-title {
-    color: white;
-    text-decoration: underline; 
-}
-#305A89
-*/
 #home > a {
     color: #999999;
     text-decoration: none;
 }
+
 #home > a:hover {
     color: white;
     text-decoration: underline;
@@ -104,7 +92,6 @@ nav > a:hover {
 
 .nome {
     font-family: "Changa", sans-serif;
-    
     font-style: normal;
     font-size: 3rem;
     color: rgb(244, 243, 238);
@@ -130,6 +117,7 @@ nav > a:hover {
     justify-content: center;
     align-items: center;
 }
+
 .perfil > h1 {
     color: black;
 }
@@ -137,10 +125,11 @@ nav > a:hover {
 #about {
     background-image: var(--cor04);
     height: 100%;
-    box-shadow: 3px solid black;
+    border: 3px solid black; /* substituído box-shadow */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     color: white;
     font-size: 20px;
     margin-top: 150px;
@@ -155,7 +144,6 @@ nav > a:hover {
 
 .traleftinsi {
     padding: 50px 20px 20px 20px;
-    width: 100%;
     max-width: 400px;
     display: flex;
     flex-direction: column;
@@ -164,8 +152,9 @@ nav > a:hover {
     border: 6px solid #305A89;
     border-radius: 20px;
     text-align: justify;
-    
+    margin: 20px;
 }
+
 .traleftinsi > p {
     padding: 8px;
 }
@@ -186,6 +175,7 @@ nav > a:hover {
     flex-direction: column;
     align-items: center;
 }
+
 .trarighta {
     font-size: 15px;
     color: rgb(223, 221, 221);
@@ -201,6 +191,7 @@ nav > a:hover {
     flex-direction: column;
     align-items: center;
 }
+
 .techtop {
     display: flex;
     justify-content: center;
@@ -208,8 +199,8 @@ nav > a:hover {
     margin-top: 60px;
     margin-bottom: 60px;
 }
+
 .techtop > h1 {
-    
     width: 50%;
     font-size: 6rem;
     text-align: left;
@@ -218,12 +209,14 @@ nav > a:hover {
     justify-content: center;
     align-items: center;
 }
+
 .techbottom {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
 }
+
 .techfoto {
     width: 100px;
     height: 100px;
@@ -237,11 +230,13 @@ nav > a:hover {
     flex-direction: column;
     align-items: center;
 }
+
 .techfoto:hover {
     background-color: rgba(0, 0, 0, 0.096);
     color: white;
-    transition: 0,5s;
-} 
+    transition: 0.5s; /* corrigido o valor da transição */
+}
+
 .techfoto > h1 {
     font-size: 1rem;
 }
@@ -257,6 +252,7 @@ nav > a:hover {
 .experiencetitle {
     margin-top: 60px;
 }
+
 .experiencetitle > h1 {
     font-size: 6rem;
     text-align: center;
@@ -285,19 +281,14 @@ nav > a:hover {
     flex-direction: column;
     flex-wrap: wrap;
 }
-/*
-.cardexp:hover {
-    border: 1px solid white;
-    box-shadow: inset 8px rgb(54, 54, 54);
-    background-color: var(--cor02);
-    transition: 0.2s;
-} */
-.cardexp > h1,a {
+
+.cardexp > h1, a {
     font-size: 2rem;
     padding-bottom: 5px;
     text-decoration: none;
     color: black;
 }
+
 .cardexp1 > h2 {
     margin: 0px;
     padding: 0px;
@@ -321,8 +312,8 @@ nav > a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
+
 .projtitle {
     display: flex;
     justify-content: center;
@@ -330,6 +321,7 @@ nav > a:hover {
     margin-top: 60px;
     margin-bottom: 50px;
 }
+
 .projectsright {
     width: 100%;
     display: flex;
@@ -361,12 +353,14 @@ nav > a:hover {
     margin: 10px 20px 20px 20px;
     background-position: center;
 }
+
 .projfoto > a {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 30px;
 }
+
 .projfoto1 {
     width: 220px;
     height: 220px;
@@ -374,6 +368,7 @@ nav > a:hover {
     border-radius: 20px;
     margin: 10px 20px 20px 20px;
 }
+
 .projfoto1 > a {
     display: flex;
     justify-content: center;
@@ -388,22 +383,23 @@ footer {
     flex-direction: column;
     align-items: center;
 }
+
 .link {
     margin: 30px;
     background-color: var(--cor03);
 }
-.link2 {
-    
-}
+
+.link2 {}
+
 .link2 > h1 {
     font-size: 1rem;
     color: white;
     margin-bottom: 8px;
 }
-@media (min-width: 300px) and(max-width: 900px)  {
 
+@media (max-width: 300px) {
     body {
-        margin: 0px;
+        margin: 0;
     }
 
     header {
@@ -423,9 +419,13 @@ footer {
     }
 
     #homeart {
+        background-image: url("imagens-header/laptop300px.png");
+        background-repeat: no-repeat;
+        background-position: bottom center;
         height: auto;
         flex-direction: column;
     }
+
     .perfil {
         display: none;
     }
@@ -442,34 +442,45 @@ footer {
 
     #about {
         flex-direction: column;
-        height: auto;
-        flex-wrap: wrap;
-    }
-    
-    .geralcont {
-        width: 100%;
-        height: auto;
-        flex-direction: column;
-    }
-    .geralcont > p {
-        width: 100%;
-        padding: 10px;
-        margin: 10px;
+        margin-top: 50px;
     }
 
-    .traleft {
+    .traleft, .traright {
         width: 100%;
-
-        margin: 10px 0;
     }
+
+    .traleftinsi {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .traleftinsi > p {
+        padding: 4px;
+    }
+
+    .traleft > p, .traright {
+        font-size: 18px;
+    }
+
+    .traright {
+        font-size: 16px;
+    }
+
+    .trarighta {
+        font-size: 16px;
+    }
+
     #technology {
         height: auto;
     }
+
     .techbottom {
         flex-direction: column;
         height: auto;
         margin: 20px;
+        flex-wrap: wrap;
     }
+
     .tech {
         margin: 10px 0;
     }
@@ -492,6 +503,7 @@ footer {
         height: auto;
         flex-direction: column;
     }
+
     aside {
         width: 100%;
         height: auto;
