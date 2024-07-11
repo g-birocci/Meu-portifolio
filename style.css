@@ -19,11 +19,12 @@
 }
 
 body {
-    margin: 0;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
     background-color: var(--cor04);
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -31,53 +32,50 @@ h1 {
     padding: 0;
 }
 
-header {
-    background-color: #0E0B26;
-    height: 20px;
-    padding: 20px;
-    font-size: 20px;
-    display: block;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.856);
+a {
     color: var(--cor01);
+    text-decoration: none;
+    font-family: sans-serif;
+  }
+  
+  a:hover {
+    color: var(--cor00);
+    transition: 0,5s;
+  }
+  
+  #logo {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  #header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    position: sticky; 
+    height: 70px;
+    padding: 1rem;
+    box-sizing: border-box;
+    justify-content: space-between;
+    background: var(--cor03);
+    position: sticky;
     z-index: 10;
     top: 0;
-}
-
-#home > a {
-    color: #999999;
-    text-decoration: none;
-}
-
-#home > a:hover {
-    color: white;
-    text-decoration: underline;
-}
-
-.none {
-    width: 50px;
-}
-
-nav {
-    color: #b3aca4;
-    padding: 5px;
-}
-
-nav > a {
-    color: #b3aca4;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    margin-right: 50px;
-}
-
-nav > a:hover {
-    text-decoration: underline;
-    color: white;
-}
+  }
+  
+  #menu {
+    display: flex;
+    list-style: none;
+    gap: .5rem;
+  }
+  
+  #menu a {
+    display: block;
+    padding: .5rem;
+    font-size: large;
+  }
+  
+  #btn-mob {
+    display: none;
+  }
 
 #homeart {
     background-image: url("imagens-header/laptop-cort_1280.png");
@@ -397,6 +395,74 @@ footer {
     margin-bottom: 8px;
 }
 
+@media (max-width: 600px) {
+    #menu {
+      display: block;
+      position: absolute;
+      width: 100%;
+      top: 70px;
+      right: 0px;
+      background: var(--cor03);
+      height: 0px;
+      transition: .6s;
+      z-index: 1000;
+      visibility: hidden;
+      overflow-y: hidden;
+    }
+  
+    #nav.active #menu {
+      height: calc(100vh - 70px);
+      visibility: visible;
+      overflow-y: auto;
+    }
+  
+    #menu a {
+      padding: 1rem 0;
+      margin: 0 1rem;
+      border-bottom: 2px solid rgba(255, 255, 255, .05);
+    }
+  
+    #btn-mob {
+      display: flex;
+      padding: .4rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      gap: .5rem;
+      color: var(--cor01);
+    }
+  
+    #hamburguer {
+      border-top: 2px solid var(--cor01);
+      width: 20px;
+    }
+  
+    #hamburguer::after, #hamburguer::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--cor01);
+      margin-top: 5px;
+      transition: .3s;
+      position: relative;
+    }
+  
+    #nav.active #hamburguer {
+      border-top-color: transparent;
+    }
+  
+    #nav.active #hamburguer::before {
+      transform: rotate(135deg);
+    }
+  
+    #nav.active #hamburguer::after {
+      transform: rotate(-135deg);
+      top: -7px;
+    }
+  }
+  
 @media (max-width: 300px) {
     body {
         margin: 0;

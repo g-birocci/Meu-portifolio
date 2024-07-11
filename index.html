@@ -11,16 +11,21 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-    <header>
-        <h1 id="home"><a href="#homeart" id="portfolio-title">My Portfolio</a></h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#technology">Technology</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="contact.html">Contact</a>
+    <header id="header">
+        <a id="logo" href="">My Portfolio</a>
+        <nav id="nav">
+          <button aria-label="Abrir Menu" id="btn-mob" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+            Menu <span id="hamburguer"></span>
+          </button>
+          <ul id="menu" role="menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#technology">Technologies</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </nav>
-    </header>
+      </header>
     <main>
         <article id="homeart">
             <div class="perfil">
@@ -173,6 +178,6 @@
             <h1>Developed by Birocci Tech LTDA</h1>
         </div>
     </footer>
-    <!-- <script src="style.js"></script> -->
+    <script src="script.js"></script>
 </body>
 </html>
