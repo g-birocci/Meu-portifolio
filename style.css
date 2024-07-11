@@ -483,13 +483,21 @@ footer {
         flex-wrap: wrap;
     }
 
-    .tech {
+    .techfoto {
         margin: 10px 0;
     }
 
     #experience {
         flex-direction: column;
         height: auto;
+        margin-top: 50px;
+    }
+    .experiencetitle {
+        margin-top: 50px;
+    }
+    .experiencetitle > h1 {
+        font-size: 1rem;
+        margin: 20px;
     }
 
     .geralexp {
