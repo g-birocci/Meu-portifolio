@@ -34,7 +34,7 @@ body {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4.6px);
     -webkit-backdrop-filter: blur(4.6px);
-    border: 1px solid rgba(255, 255, 255, 0.99);
+    border: 6px solid #305A89;
     padding: 20px;
 }
 label {
@@ -57,6 +57,11 @@ label, input {
     border: 1px solid white;
     border-radius: 10px;
     font-size: 1rem;
+    text-decoration: none;
+}
+.button > a {
+    text-decoration: none;
+    color: black;
 }
 .button:hover {
     background-color: rgb(155, 155, 155);
@@ -91,8 +96,9 @@ label, input {
             <br>
             <input class="button" type="submit" value="Inserir">
             <input class="button" type="reset" value="Limpar">
+            <button class="button"><a href="index.html">Voltar</a></button>
         </form>
-        <button><a href="index.html">Voltar</a></button>
+        
     </div>
 </body>
 </html>

@@ -209,6 +209,7 @@ li > a {
 }
 
 .techbottom {
+    margin-top: 25px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -387,8 +388,6 @@ footer {
     background-color: var(--cor03);
 }
 
-.link2 {}
-
 .link2 > h1 {
     font-size: 1rem;
     color: white;
@@ -463,191 +462,47 @@ footer {
     }
   }
 
-@media (max-width: 300px) {
-    body {
-        margin: 0;
-    }
+@media (max-width: 600px) {
 
     #homeart {
         background-image: url("imagens-header/laptop300px.png");
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: auto;
-        flex-direction: column;
+        height: auto; /* Altura automática para se ajustar ao conteúdo */
     }
 
-    .perfil {
-        display: none;
+    .traleft, .traright {
+        width: 100%; /* Tamanho total nas telas menores */
+        text-align: center; /* Centraliza o texto */
     }
 
-    .nome {
-        font-size: 2.5rem;
-        margin-left: 0;
-        margin-bottom: 20px;
+    .traleftinsi {
+        max-width: 100%; /* Largura total */
+        margin: 20px 0; /* Margens menores */
     }
 
-    .nome > p {
-        font-size: 1rem;
+    .techtop > h1, .projtitle > h1, .experiencetitle > h1 {
+        font-size: 3rem; /* Tamanho do título menor */
+        width: 80%; /* Largura ajustável */
+        text-align: center; /* Centraliza o título */
+    }
+
+    .cardexp {
+        margin: 20px; /* Centraliza na tela */
+    }
+
+    .proj {
+    */
+    }
+
+    .techfoto, .proj {
+       
+        margin: 10px auto; /* Centraliza na tela */
+    }
+
+    .techfoto > h1, .projfoto > a, .projfoto1 > a {
+        font-size: 0.8rem; /* Tamanho do texto menor */
     }
 
     #about {
-        background-color: var(--cor04);
-        height: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        color: white;
-        font-size: 20px;
-        flex-wrap: wrap;
-    }
-    
-    .traleft {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 50%;
-    }
-    
-    .traleftinsi {
-        padding: 50px 20px 20px 20px;
-        max-width: 400px;
-        display: flex;
-        flex-direction: column;
-        background-color: #EFEFEF;
-        color: black;
-        border: 6px solid #305A89;
-        border-radius: 20px;
-        text-align: justify;
-        margin: 20px;
-    }
-    
-    .traleftinsi > p {
-        padding: 8px;
-    }
-    
-    .traleft > p {
-        color: rgb(153, 153, 153);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .traright {
-        width: 50%;
-        font-size: 14px;
-        color: rgb(223, 221, 221);
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .trarighta {
-        font-size: 15px;
-        color: rgb(223, 221, 221);
-    }
-    
-    @media (max-width: 768px) {
-        #about {
-            flex-direction: column;
-            font-size: 18px;
-        }
-    
-        .traleft, .traright {
-            width: 90%;
-        }
-    
-        .traleftinsi {
-            padding: 30px 15px 15px 15px;
-        }
-    
-        .traleft > p, .traright {
-            font-size: 16px;
-        }
-    
-        .traright
-    
-    
-    
-
-    .traleft, .traright {
-        width: 100%;
-    }
-
-    .traleftinsi {
-        padding: 20px;
-        max-width: 100%;
-    }
-
-    .traleftinsi > p {
-        padding: 4px;
-    }
-
-    .traleft > p, .traright {
-        font-size: 18px;
-    }
-
-    .traright {
-        font-size: 16px;
-    }
-
-    .trarighta {
-        font-size: 16px;
-    }
-
-    #technology {
-        height: auto;
-    }
-
-    .techbottom {
-        flex-direction: column;
-        height: auto;
-        margin: 20px;
-        flex-wrap: wrap;
-    }
-
-    .techfoto {
-        margin: 10px 0;
-    }
-
-    #experience {
-        flex-direction: column;
-        height: auto;
-        margin-top: 50px;
-    }
-    .experiencetitle {
-        margin-top: 50px;
-    }
-    .experiencetitle > h1 {
-        font-size: 1rem;
-        margin: 20px;
-    }
-
-    .geralexp {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .exp {
-        margin: 10px 0;
-    }
-    
-    .techtop > h1 {
-        font-size: 1.5rem;
-    }
-
-    #contacts {
-        height: auto;
-        flex-direction: column;
-    }
-
-    aside {
-        width: 100%;
-        height: auto;
-        flex-direction: column;
-    }
-
-    .geralform {
-        width: 80%;
+        flex-flow: column;
     }
 }
