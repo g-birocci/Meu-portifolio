@@ -81,8 +81,10 @@ label, input {
 </head>
 <body>
     <h1>Obrigado por nos contactar</h1>
-    <div class="formgeral">
+    
         <form action="inserir.php">
+            <fieldset class="formgeral">
+                <legend>Dados do contacto</legend>
             
             <input type="text" name="nome" size="50" maxlength="70" required placeholder="Primeiro nome">
             <br>
@@ -97,8 +99,9 @@ label, input {
             <input class="button" type="submit" value="Inserir">
             <input class="button" type="reset" value="Limpar">
             <button class="button"><a href="index.html">Voltar</a></button>
+
+            </fieldset>
         </form>
         
-    </div>
 </body>
 </html>
