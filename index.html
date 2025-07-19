@@ -1,187 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portifolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="contact.html">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>G-Birocci Developer</title>
+    <link rel="icon" href="/favicon/icons8-developer-pastel-color-32.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
-    <header id="header">
-        <a id="logo" href="">My Portfolio</a>
-        <nav id="nav">
-          <button aria-label="Abrir Menu" id="btn-mob" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
-            Menu <span id="hamburguer"></span>
-          </button>
-          <ul id="menu" role="menu">
-            <li><a class="cardh2" href="#about">About</a></li>
-            <li><a class="cardh2" href="#technology">Technology</a></li>
-            <li><a class="cardh2" href="#experience">Experience</a></li>
-            <li><a class="cardh2" href="#projects">Projects</a></li>
-            <li><a class="cardh2" href="contact.html">Contact</a></li>
-          </ul>
+    <header>
+        <nav class="navbar">
+            <div class="logo">MeuPortfólio</div>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#experience">Experiência</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+                <li style="margin-left:1rem;">
+                    <span style="font-weight:bold; color:var(--primary);">PT</span> <span style="color:#888;">|</span> <a href="index-en.html" style="font-weight:bold; color:var(--text);">EN</a>
+                </li>
+            </ul>
         </nav>
-      </header>
-    <main>
-        <article id="homeart">
-            <div class="perfil">
-                <h1 class="nome animate__animated animate__pulse loop">Hi&#128075;, <br>
-                    I'm Gabriel. <br>
-                    Web Developer
-                </h1> 
-            </div> 
+    </header>
+    <section id="home" class="section home-section">
+        <div class="home-content">
+            <div class="profile-pic-container">
+                <img src="img/Imagens-sobre/blob (4) 1.svg" alt="Foto de Perfil" class="profile-pic">
+            </div>
+            <h1>Olá, eu sou <span class="highlight">Gabriel Birocci</span></h1>
+            <p class="subtitle">Desenvolvedor apaixonado por tecnologia e inovação.</p>
+        </div>
+    </section>
 
-        </article>
+    <section id="about" class="section about-section">
+        <h2>Sobre mim</h2>
+        <p>Estou em busca da minha primeira oportunidade na área de desenvolvimento front-end e back-end. Já possuo experiência em suporte e manutenção de TI, e agora busco novos desafios no desenvolvimento web.<br>
+            Se quiser saber mais sobre minha trajetória na área de TI, consulte meu currículo com informações mais detalhadas.</p>
+        <a href="/docs/gbirocci_cv.pdf" download class="btn-cv" target="_blank">📄 Baixar Currículo</a>
+    </section>
 
-        <article id="about">
-            <div class="traleft">
-                <div class="traleftinsi">
-                    <h1>About me</h1>
-                    <p>Hello, I am Gabriel. I am 26 years old, originally from Brazil, and I live in Porto. <br>
-                        I am looking for my first opportunity in the field of front-end and back-end development. I already have experience in IT support and maintenance, and now I am seeking new challenges in web development. <br>
-                        If you would like to know more about my career in IT, please refer to my resume with more detailed information.
-                    </p>
-                </div>
-            </div>
-            <div class="traright">
-                <img src="Imagens-sobre/blob (4) 1.svg" width="370px" height="370px" alt="My Profile Picture">
-                <p>Trabalhar em equipe não significa que todos tenha que <br> fazer tudo, mas sim ter a consiência do todo e do papel  <br> de cada um neste todo. <a class="trarighta" href="https://www.godri.com.br/quem-e-daniel-godri/" target="_blank">Daniel Codri</a></p>
-            </div>
-        </article>
+    <section id="experience" class="section experience-section">
+        <h2>Experiência Profissional</h2>
+        <ul class="timeline">
 
-        <article id="technology">
-            <div class="techtop">
-                <h1>Technology</h1>
-            </div>
-            <div class="techbottom">
-                <div class="techfoto">
-                    <div class="techfotos"><img src="imagens-tec/logo-html5.svg" width="80px" height="80px" alt=""></div>
-                    <h1>HTML 5</h1>
-                </div>
-                <div class="techfoto">
-                    <div class="techfotos"><img src="imagens-tec/logo-css.svg" width="70px" height="80px" alt=""></div>
-                    <h1>CSS</h1>
-                </div>
-                <div class="techfoto">
-                    <div class="techfotos"><img src="imagens-tec/logo-javascript.svg" alt=""></div>
-                    <h1>Java Script</h1>
-                </div>
-                <div class="techfoto">
-                    <div class="techfotos"><img src="imagens-tec/logo-php.svg" width="80px" height="80px" alt=""></div>
-                    <h1>PHP</h1>
-                </div>
-                <div class="techfoto">
-                    <div class="techfotos"><img src="imagens-tec/sql-server.png" width="80px" height="80px" alt=""></div>
-                    <h1>SQL Server</h1>
-                </div>
-            </div>
-        </article>
+            <li>
+                <span class="job-title">Técnico em Manutenção de Celulares</span> - <span class="company"><a class="company" href="https://cellairis.com.br/" target="_blank">Cellairis</a></span>
+                <span class="period">2018 - 2022</span>
+                <p>Atuei na venda de eletrônicos e na prestação de serviços de manutenção, incluindo reparos de telas, substituição de baterias, conectores e periféricos. Realizei também transferência e backup de dados, além de restauração e atualização de dispositivos portáteis.</p>
+            </li>
 
-        <article id="experience">
-            <div class="experiencetitle">
-                <h1 >Experience</h1>
-            </div>
-            <div class="experienceleft">
-                <div class="cardexp">
-                    <h1><a href="https://cellairis.com.br/" target="_blank">Cellairis</a></h1>
-                        <div class="cardexp1">
-                            <h2>Mobile Phone Maintenance Technician</h2>
-                                <ul>
-                                    <li>Sale of electronics and screen repair services, battery, connectors, and peripherals.</li>
-                                    <li>Data transfer and backup.</li>
-                                    <li>Restoration and update of portable devices.</li>
-                                </ul>
-                        </div>
-                </div>
-                <div class="cardexp">
-                    <h1><a href="https://www.shoppingpatiopaulista.com.br/lojas/samsung" target="_blank">Store Sansung</a></h1>
-                        <div class="cardexp1">
-                            <h2>Galaxy Consultant</h2>
-                            <ul>
-                                <li>Customer service.</li>
-                                <li>Explanation of the functionality of mobile phones and notebooks.</li>
-                                <li>Data transfer and backup.</li>
-                                <li>System restoration and updates.</li>
-                            </ul>
-                        </div>
-                </div>
-                <div class="cardexp">
-                    <h1>Shoebiz</a></h1>
-                        <div class="cardexp1">
-                            <h2>Help Desk</h2>
-                        
-                            <ul>
-                                <li>Handling calls.</li>
-                                <li>Use of remote access tools.</li>
-                                <li>Log verification.</li>
-                                <li>Responsible for backup routine.</li>
-                            </ul>
-                   
-                        </div>
-                </div>
-                <div class="cardexp">
-                    <h1><a href="https://portal.barueri.sp.gov.br/" target="_blank">Prefeitura de Barueri</a></h1>
-                        <div class="cardexp1">
-                            <h2>Laboratory Technician</h2>
-                        <ul>
-                                <li>Network mapping.</li>
-                                <li>Switch configuration.</li>
-                                <li>Disk cloning (Ghost).</li>
-                                <li>Active Directory configuration.</li>
-                                <li>Backup routine.</li>
-                        </ul>
-                    
-                        </div>
-                </div>
-            </div>
-        </article>
+            <li>
+                <span class="job-title">Consultor Galaxy</span> - <span class="company"><a class="company" href="https://www.shoppingpatiopaulista.com.br/lojas/samsung" target="_blank">Loja Samsung</a></span>
+                <span class="period">2017 - 2018</span>
+                <p>Atendimento ao cliente. Explicação de funcionalidades de celulares e notebooks. Transferência e backup de dados.</p>
+            </li>
 
-        <article id="projects">
-            <div class="projtitle">
-                <h1>Projects</h1>
+            <li>
+                <span class="job-title">Help Desk</span> - <span class="company"><a class="company" href="#">Shoebiz</a></span>
+                <span class="period">2016 - 2017</span>
+                <p>Atuei no suporte técnico, atendimento de chamados e uso de ferramentas de acesso remoto para diagnóstico e resolução de problemas. Também era responsável pela verificação de logs e gerenciamento da rotina de backup, garantindo a integridade e segurança dos dados.</p>
+            </li>
+
+            <li>
+                <span class="job-title">Técnico de Laboratório</span> - <span class="company"><a class="company" href="https://portal.barueri.sp.gov.br/" target="_blank">Prefeitura de Barueri</a></span>
+                <span class="period">2020 - 2022</span>
+                <p>Responsável pelo mapeamento de rede e configuração de switches, além de clonagem de discos usando Ghost. Também realizei configuração de Active Directory e gerenciei a rotina de backup, garantindo eficiência dos sistemas e segurança dos dados.</p>
+            </li> 
+
+        </ul>
+    </section>
+
+    <section id="projects" class="section projects-section">
+        <h2>Projetos</h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <h3>Projeto Cordel</h3>
+                <p>Este projeto foi desenvolvido durante meus estudos, utilizando as tecnologias HTML e CSS para a construção da interface, com a aplicação do efeito parallax para enriquecer a experiência visual.</p>
+                <a href="https://g-birocci.github.io/projeto-cordel/" target="_blank"><img src="img/imagens-projetos/31883347_7882708.svg" width="180px" alt="Foto-Cordel" ></a>
+
             </div>
-            <aside class="projectsright">
-                <div class="proj">
-                    <div class="projfoto">
-                        <a href="https://g-birocci.github.io/projeto-android/" target="_blank"><img src="imagens-projetos/bugdroid200px.png" alt="Logo-Bugdroid"></a>
-                    </div>
-                    <h1>Projects Android</h1>
+
+            <div class="project-card">
+                <h3>Projeto Android</h3>
+                <p>Este projeto foi desenvolvido durante meus estudos, utilizando as tecnologias HTML e CSS para a construção da interface. Ele apresenta a história do Android e marca o meu primeiro projeto com design responsivo.</p>
+                <a href="https://g-birocci.github.io/projeto-android/" target="_blank"><img src="img/imagens-projetos/bugdroid200px.png" width="200px"       alt="Logo-Android"></a>
+            </div>
+
+            <div class="project-card">
+                <h3>Projeto CoffeeShop</h3>
+                <p>Desenvolvi este site de um café durante meus estudos, usando HTML, CSS e JavaScript. Foi o meu primeiro projeto com JavaScript, onde criei efeitos visuais e também implementei um menu hambúrguer funcional.</p>
+                <a href="https://www.reidoscroissants.com/"><img src="img/imagens-projetos/rei.png" width="200px" alt="Logo-Croissants"></a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills" class="section skills-section">
+        <h2>Skills</h2>
+        <div class="skills-marquee-outer">
+            <div class="skills-marquee" id="skills-marquee">
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/logo-html5.svg" alt="HTML5" />
+                    <span>HTML5</span>
                 </div>
-                <div class="proj">
-                    <div class="projfoto1">
-                        <a href="https://g-birocci.github.io/projeto-cordel/" target="_blank"><img src="imagens-projetos/31883347_7882708.svg" width="180px" alt="Foto-Cordel" ></a>
-                    </div>
-                    <h1>Project Cordel</h1>
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/logo-css.svg" alt="CSS3" />
+                    <span>CSS3</span>
                 </div>
-                <div class="proj">
-                    <div class="projfoto1">
-                        <a href="https://g-birocci.github.io/projeto-menu/" target="_blank"><img src="imagens-projetos/rei-do-croissants.png" width="180px" alt="Foto-Cordel" ></a>
-                    </div>
-                    <h1>Project Rei dos Croissants</h1>
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/logo-javascript.svg" alt="JavaScript" />
+                    <span>JavaScript</span>
                 </div>
-            </aside>
-        </article>
-        <article id="contacts">
-            
-        </article>
-    </main>
-    
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/logo-react.svg" alt="React" />
+                    <span>React</span>
+                </div>
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/logo-nodejs.svg" alt="NodeJS" />
+                    <span>NodeJS</span>
+                </div>
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/logo-mongodb.svg" alt="MongoDB" />
+                    <span>MongoDB</span>
+                </div>
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/logo-php.svg" alt="PHP" />
+                    <span>PHP</span>
+                </div>
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/sql-server.png" alt="SQL Server" />
+                    <span>SQL Server</span>
+                </div>
+                <!-- Duplicados para efeito de loop -->
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/logo-html5.svg" alt="HTML5" />
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/logo-css.svg" alt="CSS3" />
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/logo-javascript.svg" alt="JavaScript" />
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/logo-react.svg" alt="React" />
+                    <span>React</span>
+                </div>
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/logo-nodejs.svg" alt="NodeJS" />
+                    <span>NodeJS</span>
+                </div>
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/logo-mongodb.svg" alt="MongoDB" />
+                    <span>MongoDB</span>
+                </div>
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/logo-php.svg" alt="PHP" />
+                    <span>PHP</span>
+                </div>
+                <div class="skill-marquee-card">
+                    <img src="img/imagens-tec/sql-server.png" alt="SQL Server" />
+                    <span>SQL Server</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <h2>Contato</h2>
+        <form class="contact-form" action="https://getform.io/f/bjjoggdb" method="POST">
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu e-mail" required>
+            <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <div class="contact-social">
+            <a href="https://github.com/g-birocci" target="_blank" title="GitHub">
+                <img src="img/imagens-contato/icons8-github (1).svg" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/SEU_USUARIO" target="_blank" title="LinkedIn">
+                <img src="img/imagens-contato/icons8-linkedin (2).svg" alt="LinkedIn">
+            </a>
+            <a href="mailto:SEU_EMAIL" title="E-mail">
+                <img src="img/imagens-contato/icons8-instagram.svg" alt="E-mail">
+            </a>
+        </div>
+    </section>
+
     <footer>
-        <div class="link">
-            <a href="https://github.com/g-birocci" target="_blank"><img src="imagens-contato/icons8-github (2).svg" width="40px" alt="Logo icons8-github"></a>
 
-            <a href="https://www.linkedin.com/in/gabriel-birocci-824629122/" target="_blank"><img src="imagens-contato/icons8-linkedin (2).svg" alt="logo-linkedin"></a>
+        <p>&copy; 2025 GabrielDev LTDA. Todos os direitos reservados.</p>
 
-            <a href="https://www.instagram.com/g_birocci/" target="_blank"><img src="imagens-contato/icons8-instagram.svg" alt="logo-instagran"></a>
-        </div>
-        <div class="link2">
-            <h1>Developed by Birocci Tech LTDA</h1>
-        </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
