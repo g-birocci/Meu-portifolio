@@ -135,7 +135,8 @@ body {
 .about-section h2,
 .experience-section h2,
 .projects-section h2,
-.contact-section h2 {
+.contact-section h2,
+.technology-section {
     font-family: 'Orbitron', sans-serif;
     color: var(--primary);
     margin-bottom: 1.5rem;
