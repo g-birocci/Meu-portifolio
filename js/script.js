@@ -65,3 +65,17 @@ navLinks.forEach(link => {
         menuToggle.classList.remove('open');
     });
 });
+
+//verefica por que com o link não funciona.
+
+//Inverte o idioma.
+
+document.getElementById('link-pt').addEventListener('click', function(e) {
+  e.preventDefault();
+  window.location.href = 'index.html';  // link para a página em PT
+});
+
+document.getElementById('link-en').addEventListener('click', function(e) {
+  e.preventDefault();
+  window.location.href = 'index-en.html';  // link para a página em EN
+});

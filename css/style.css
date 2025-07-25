@@ -90,8 +90,12 @@ body {
     padding: 100px 20px 60px 20px;
     max-width: 900px;
     margin: 0 auto;
-    min-height: 80vh;
+    min-height: auto;
     animation: fadeIn 1.2s cubic-bezier(.77,0,.18,1);
+}
+
+#contact {
+    margin-bottom: 50px;
 }
 
 @keyframes fadeIn {
@@ -210,12 +214,14 @@ body {
     box-shadow: 0 8px 32px 0 var(--primary);
 }
 
+
 .carousel-container {
       width: 1000px;
       max-width: 100%;
       overflow: hidden;
       position: relative;
       padding: 20px 0;
+      margin-top: 40px;
       mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
       -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     }
@@ -223,7 +229,7 @@ body {
     .carousel-track {
         display: flex;
         gap: 30px;
-        animation: scrollLeft 40s linear infinite;
+        animation: scrollLeft 60s linear infinite;
         width: max-content; /* importante para suportar o conteúdo duplicado */
     }
 
@@ -247,13 +253,14 @@ body {
     }
 
     @keyframes scrollLeft {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-    }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 
 
 .contact-form {
@@ -432,6 +439,15 @@ footer {
     .section {
         padding: 80px 16px 30px 16px;
     }
+
+    #about {
+        height: auto;
+
+    }
+
+    .about-section {
+        height: auto;
+    }
     .projects-grid {
         grid-template-columns: 1fr;
     }
@@ -476,12 +492,9 @@ footer {
       .carousel-container {
       width: 380px;
       padding: 10px 0;
-    
-    /* Remove o efeito de máscara no mobile */
       mask-image: none;
       -webkit-mask-image: none;
     
-    /* Efeito elegante de fundo nas bordas */
       background: linear-gradient(to right, #111 0%, transparent 10%, transparent 90%, #111 100%);
       }
 
