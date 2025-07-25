@@ -136,7 +136,7 @@ body {
 .experience-section h2,
 .projects-section h2,
 .contact-section h2,
-.technology-section {
+.technology-section h2{
     font-family: 'Orbitron', sans-serif;
     color: var(--primary);
     margin-bottom: 1.5rem;
@@ -209,6 +209,52 @@ body {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 8px 32px 0 var(--primary);
 }
+
+.carousel-container {
+      width: 1000px;
+      max-width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding: 20px 0;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .carousel-track {
+        display: flex;
+        gap: 30px;
+        animation: scrollLeft 40s linear infinite;
+        width: max-content; /* importante para suportar o conteúdo duplicado */
+    }
+
+
+    .slide {
+      min-width: 150px;
+      flex-shrink: 0;
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    }
+
+    .slide img {
+      width: 100px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    @keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+    }
+
 
 .contact-form {
     display: flex;
@@ -304,138 +350,6 @@ footer {
     box-shadow: var(--shadow);
     display: flex;
     justify-content: center; 
-}
-
-/* Carrossel de Skills */
-.skills-carousel {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto 2rem auto;
-    overflow: hidden;
-    min-height: 220px;
-}
-.carousel-slide {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 220px;
-    animation: fadeIn 0.8s;
-}
-.carousel-slide.active {
-    display: flex;
-}
-.skills-icons {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1rem;
-    min-width: 80px;
-}
-.skill-item img {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 0.5rem;
-}
-@media (max-width: 600px) {
-    .skills-icons {
-        gap: 1rem;
-    }
-    .skill-item img {
-        width: 36px;
-        height: 36px;
-    }
-    .carousel-slide {
-        min-height: 160px;
-    }
-}
-
-/* Carrossel de Skills Horizontal */
-.skills-carousel-horizontal {
-    margin: 2.5rem auto 2.5rem auto;
-    max-width: 700px;
-    width: 100%;
-    text-align: center;
-}
-.skills-carousel-horizontal h3 {
-    margin-bottom: 1.2rem;
-    font-size: 1.5rem;
-}
-.carousel-track {
-    display: flex;
-    align-items: center;
-    gap: 3.5rem;
-    overflow: hidden;
-    width: 100%;
-    min-height: 140px;
-    position: relative;
-    height: 140px;
-}
-.carousel-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 120px;
-    font-size: 1.2rem;
-    transition: transform 0.5s;
-}
-.carousel-item img, .carousel-item span[style*="font-size"] {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 0.7rem;
-    font-size: 3rem !important;
-}
-@media (max-width: 700px) {
-    .skills-carousel-horizontal {
-        max-width: 98vw;
-    }
-    .carousel-track {
-        gap: 1.5rem;
-        min-height: 90px;
-        height: 90px;
-    }
-    .carousel-item {
-        min-width: 70px;
-        font-size: 1rem;
-    }
-    .carousel-item img, .carousel-item span[style*="font-size"] {
-        width: 40px;
-        height: 40px;
-        font-size: 2rem !important;
-    }
-}
-
-/* Marquee Animation for Skills Carousel */
-.marquee {
-    display: flex;
-    animation: marquee 16s linear infinite;
-    will-change: transform;
-}
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-/* Ajuste para garantir que os itens fiquem em linha e não quebrem */
-.carousel-track.marquee {
-    width: 200%;
-}
-.carousel-track.marquee .carousel-item {
-    flex: 0 0 12.5%; /* 8 itens por linha, ajuste conforme necessário */
-}
-@media (max-width: 700px) {
-    .carousel-track.marquee .carousel-item {
-        flex: 0 0 25%; /* 4 itens por linha no mobile */
-    }
 }
 
 /* Botão de Currículo */
@@ -558,355 +472,29 @@ footer {
     }
 } 
 
-/* Carrossel Moderno de Skills */
-.skills-carousel-modern {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    max-width: 900px;
-    margin: 2.5rem auto 2.5rem auto;
-    position: relative;
-}
-.carousel-arrow {
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: var(--bg);
-    border: none;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    font-size: 2rem;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: var(--shadow);
-    transition: background 0.3s, color 0.3s, transform 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-}
-.carousel-arrow:hover {
-    background: linear-gradient(90deg, var(--accent), var(--primary));
-    color: var(--text);
-    transform: scale(1.08);
-}
-.carousel-cards {
-    display: flex;
-    gap: 2rem;
-    width: 100%;
-    max-width: 600px;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-.carousel-card {
-    background: var(--card);
-    border-radius: 18px;
-    box-shadow: 0 4px 32px 0 var(--primary), 0 2px 8px 0 rgba(0,0,0,0.10);
-    padding: 2rem 1.2rem 1.2rem 1.2rem;
-    min-width: 140px;
-    max-width: 180px;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1.2rem;
-    transition: transform 0.4s, box-shadow 0.4s, opacity 0.4s;
-    opacity: 0.6;
-    filter: blur(1px);
-    z-index: 1;
-}
-.carousel-card img, .carousel-card span[style*="font-size"] {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 1rem;
-    font-size: 3rem !important;
-}
-.carousel-card.active {
-    transform: scale(1.18);
-    box-shadow: 0 8px 40px 0 var(--accent), 0 2px 8px 0 rgba(0,0,0,0.18);
-    opacity: 1;
-    filter: none;
-    z-index: 2;
-}
-.carousel-card.prev, .carousel-card.next {
-    opacity: 0.85;
-    filter: blur(0.5px);
-    transform: scale(1.05);
-    z-index: 1;
-}
-@media (max-width: 700px) {
-    .skills-carousel-modern {
-        max-width: 98vw;
-        gap: 0.2rem;
-    }
-    .carousel-cards {
-        gap: 0.5rem;
-        max-width: 98vw;
-    }
-    .carousel-card {
-        min-width: 90px;
-        max-width: 110px;
-        min-height: 110px;
-        font-size: 1rem;
-        padding: 1rem 0.5rem 0.5rem 0.5rem;
-    }
-    .carousel-card img, .carousel-card span[style*="font-size"] {
-        width: 38px;
-        height: 38px;
-        font-size: 2rem !important;
-        margin-bottom: 0.5rem;
-    }
-} 
+@media (max-width: 768px) {
+      .carousel-container {
+      width: 380px;
+      padding: 10px 0;
+    
+    /* Remove o efeito de máscara no mobile */
+      mask-image: none;
+      -webkit-mask-image: none;
+    
+    /* Efeito elegante de fundo nas bordas */
+      background: linear-gradient(to right, #111 0%, transparent 10%, transparent 90%, #111 100%);
+      }
 
-/* Bloco separado para cada carrossel de skills */
-.skills-carousel-modern-block {
-    margin-bottom: 2.5rem;
-}
-.skills-carousel-modern-block h3 {
-    text-align: center;
-    margin-bottom: 1.2rem;
-    font-size: 1.4rem;
-    color: var(--primary);
-} 
+      .carousel-track {
+        gap: 20px;
+      }
 
-/* Skills Marquee Moderno */
-.skills-marquee-outer {
-    width: 100%;
-    overflow: hidden;
-    padding: 2rem 0 1.5rem 0;
-    border-radius: 18px;
-    border: 1.5px solid rgba(255,255,255,0.07);
-    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.18), 0 2px 8px 0 rgba(0,0,0,0.10);
-    background: rgba(30, 30, 30, 0.60);
-    display: flex;
-    justify-content: center;
-}
-.skills-marquee {
-    display: flex;
-    align-items: center;
-    gap: 2.2rem;
-    animation: marquee-skill 22s linear infinite;
-    width: max-content;
-}
-@keyframes marquee-skill {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-.skill-marquee-card {
-    background: rgba(30, 30, 30, 0.85);
-    border-radius: 18px;
-    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.18);
-    border: 1.5px solid rgba(255,255,255,0.07);
-    min-width: 180px;
-    max-width: 220px;
-    min-height: 90px;
-    padding: 1.2rem 2.2rem 1.2rem 2.2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.1rem;
-    font-size: 1.3rem;
-    color: #fff;
-    font-weight: 600;
-    opacity: 0.85;
-    transition: opacity 0.3s, box-shadow 0.3s;
-    margin: 0.2rem 0;
-    backdrop-filter: blur(4px);
-}
-.skill-marquee-card img {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
-    min-height: 38px;
-    margin-right: 0.7rem;
-    border-radius: 8px;
-    background: transparent;
-    box-shadow: none;
-    object-fit: contain;
-}
-.skill-marquee-card span {
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #fff;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 110px;
-    display: block;
-}
-@media (max-width: 900px) {
-    .skills-marquee {
-        gap: 1.2rem;
-    }
-    .skill-marquee-card {
-        min-width: 120px;
-        max-width: 150px;
-        padding: 0.7rem 1.1rem 0.7rem 1.1rem;
-        font-size: 1rem;
-    }
-    .skill-marquee-card img {
-        width: 28px;
-        height: 28px;
-        min-width: 28px;
-        min-height: 28px;
-        margin-right: 0.4rem;
-    }
-    .skill-marquee-card span {
-        font-size: 0.95rem;
-        max-width: 60px;
-    }
-} 
+      .slide {
+        min-width: 100px;
+        padding: 8px;
+      }
 
-.skills-section h2 {
-    text-align: center;
-    width: 100%;
-    margin-bottom: 2rem;
-    font-size: 2.2rem;
-    font-family: 'Orbitron', sans-serif;
-    color: var(--primary);
-} 
-
-/* Skills Slider com Destaque Central, Glassmorphism e Paginação */
-.skills-slider-outer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 900px;
-    margin: 2.5rem auto 2.5rem auto;
-    position: relative;
-}
-.skills-slider-window {
-    overflow: hidden;
-    width: 660px;
-    max-width: 90vw;
-    border-radius: 18px;
-    border: 1.5px solid rgba(255,255,255,0.07);
-    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.18), 0 2px 8px 0 rgba(0,0,0,0.10);
-    background: rgba(30, 30, 30, 0.60);
-    display: flex;
-    justify-content: center;
-}
-.skills-slider-track {
-    display: flex;
-    gap: 2.2rem;
-    align-items: center;
-    transition: transform 0.7s cubic-bezier(.77,0,.18,1);
-    will-change: transform;
-}
-.skill-slider-card {
-    background: rgba(30, 30, 30, 0.85);
-    border-radius: 18px;
-    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.18);
-    border: 1.5px solid rgba(255,255,255,0.07);
-    min-width: 180px;
-    max-width: 220px;
-    min-height: 90px;
-    padding: 1.2rem 2.2rem 1.2rem 2.2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.1rem;
-    font-size: 1.3rem;
-    color: #fff;
-    font-weight: 600;
-    opacity: 0.7;
-    transition: opacity 0.3s, box-shadow 0.3s, transform 0.3s;
-    margin: 0.2rem 0;
-    backdrop-filter: blur(4px);
-    justify-content: center;
-    filter: blur(0.5px) grayscale(0.2);
-}
-.skill-slider-card.active {
-    opacity: 1;
-    box-shadow: 0 8px 40px 0 var(--accent), 0 2px 8px 0 rgba(0,0,0,0.18);
-    transform: scale(1.13);
-    filter: none;
-    border: 2px solid var(--primary);
-    z-index: 2;
-}
-.skill-slider-card.prev, .skill-slider-card.next {
-    opacity: 0.85;
-    filter: blur(0.2px) grayscale(0.1);
-    transform: scale(1.04);
-    z-index: 1;
-}
-.skill-slider-card img {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
-    min-height: 38px;
-    margin-right: 0.7rem;
-    border-radius: 8px;
-    background: transparent;
-    box-shadow: none;
-    object-fit: contain;
-}
-.skill-slider-card span {
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #fff;
-}
-.skills-slider-pagination {
-    display: flex;
-    justify-content: center;
-    gap: 0.7rem;
-    margin-top: 1.2rem;
-}
-.skills-slider-pagination .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    opacity: 0.4;
-    transition: opacity 0.3s, transform 0.3s;
-    cursor: pointer;
-}
-.skills-slider-pagination .dot.active {
-    opacity: 1;
-    transform: scale(1.2);
-}
-@media (max-width: 900px) {
-    .skills-slider-window {
-        width: 98vw;
-        min-width: 0;
-        max-width: 98vw;
+      .slide img {
+        width: 70px;
+      }
     }
-    .skills-slider-track {
-        gap: 1.2rem;
-    }
-    .skill-slider-card {
-        min-width: 120px;
-        max-width: 150px;
-        padding: 0.7rem 1.1rem 0.7rem 1.1rem;
-        font-size: 1rem;
-    }
-    .skill-slider-card img {
-        width: 28px;
-        height: 28px;
-        min-width: 28px;
-        min-height: 28px;
-        margin-right: 0.4rem;
-    }
-    .skill-slider-card span {
-        font-size: 0.95rem;
-    }
-}
-@media (max-width: 600px) {
-    .skills-slider-window {
-        width: 98vw;
-        min-width: 0;
-        max-width: 98vw;
-    }
-    .skill-slider-card {
-        min-width: 90vw;
-        max-width: 98vw;
-        font-size: 1rem;
-        padding: 1rem 0.5rem 1rem 0.5rem;
-    }
-} 

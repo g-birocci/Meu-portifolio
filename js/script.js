@@ -65,5 +65,3 @@ navLinks.forEach(link => {
         menuToggle.classList.remove('open');
     });
 });
-
-// (Carrossel de skills marquee agora é só CSS, não precisa de JS) 
