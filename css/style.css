@@ -1,513 +1,630 @@
+/*
+ * Importação de Fontes
+ * Carrega as fontes 'Orbitron' e 'Roboto' do Google Fonts para uso no projeto.
+ */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;700&display=swap');
 
+/*
+ * Variáveis CSS (Custom Properties)
+ * Define um conjunto de variáveis para cores e sombras, facilitando a manutenção e consistência do tema.
+ */
 :root {
-    --bg: #10131a;
-    --primary: #00ffe7;
-    --secondary: #1a1f2b;
-    --accent: #ff00c8;
-    --text: #f4f4f4;
-    --card: #181c25;
-    --shadow: 0 4px 32px 0 rgba(0,255,231,0.08);
+    --bg: #10131a;         /* Cor de fundo principal */
+    --primary: #00ffe7;    /* Cor primária de destaque */
+    --secondary: #1a1f2b;  /* Cor secundária, geralmente para elementos de fundo */
+    --accent: #ff00c8;     /* Cor de acento, para destaques menores */
+    --text: #f4f4f4;       /* Cor do texto principal */
+    --card: #181c25;       /* Cor de fundo para cartões/componentes */
+    --shadow: 0 4px 32px 0 rgba(0,255,231,0.08); /* Sombra padrão para elementos */
 }
 
+/*
+ * Reset Básico
+ * Aplica um reset universal para remover margens e preenchimentos padrão do navegador
+ * e garante que o box-sizing inclua padding e border no tamanho total do elemento.
+ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/*
+ * Estilos Globais do Corpo da Página
+ * Define a fonte, cor de fundo, cor do texto, altura mínima e comportamento de rolagem.
+ */
 body {
     font-family: 'Roboto', Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Evita o scrool lateral */
+    overflow-x: hidden; /* Evita o scroll lateral indesejado */
 }
 
+/*
+ * Estilos do Cabeçalho e Navegação
+ */
 .navbar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: rgb(22, 16, 38); /* falta escolher uma cor melhor */
-    box-shadow: var(--shadow);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    margin: 20px;
-    border-radius: 10px;
-    z-index: 1000;
-    animation: slideDown 1s cubic-bezier(.77,0,.18,1) 0.2s both;
+    position: fixed; /* Fixa a barra de navegação no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgb(22, 16, 38); /* Cor de fundo da navbar (nota: 'falta escolher uma cor melhor') */
+    box-shadow: var(--shadow); /* Aplica a sombra definida na variável */
+    display: flex; /* Utiliza flexbox para alinhamento dos itens */
+    justify-content: space-between; /* Espaça logo e links de navegação */
+    align-items: center; /* Centraliza verticalmente os itens */
+    padding: 1rem 2rem; /* Preenchimento interno */
+    margin: 20px; /* Margem externa para descolar das bordas */
+    border-radius: 10px; /* Bordas arredondadas */
+    z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+    animation: slideDown 1s cubic-bezier(.77,0,.18,1) 0.2s both; /* Animação de entrada */
 }
 
+/* Animação para a entrada da barra de navegação */
 @keyframes slideDown {
-    from { transform: translateY(-100%); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+        transform: translateY(-100%); /* Começa acima da tela */
+        opacity: 0; /* Invisível no início */
+    }
+    to {
+        transform: translateY(0); /* Desliza para a posição final */
+        opacity: 1; /* Totalmente visível */
+    }
 }
 
 .logo {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
-    color: var(--primary);
-    letter-spacing: 2px;
-    text-shadow: 0 0 8px var(--primary);
+    font-family: 'Orbitron', sans-serif; /* Fonte específica para o logo */
+    font-size: 2rem; /* Tamanho da fonte do logo */
+    color: var(--primary); /* Cor primária */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    text-shadow: 0 0 8px var(--primary); /* Sombra para o texto do logo */
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
+    list-style: none; /* Remove marcadores de lista */
+    display: flex; /* Layout flexbox para os links */
+    gap: 2rem; /* Espaçamento entre os itens da lista */
 }
 
 .nav-links a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 1.1rem;
-    position: relative;
-    transition: color 0.3s;
+    color: var(--text); /* Cor do texto dos links */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 1.1rem; /* Tamanho da fonte */
+    position: relative; /* Necessário para o pseudo-elemento ::after */
+    transition: color 0.3s; /* Transição suave para a cor do texto */
 }
 
+/* Pseudo-elemento para o efeito de sublinhado ao passar o mouse */
 .nav-links a::after {
-    content: '';
-    display: block;
-    height: 2px;
-    width: 0;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    transition: width 0.3s;
-    position: absolute;
-    left: 0; bottom: -4px;
+    content: ''; /* Conteúdo vazio */
+    display: block; /* Ocupa sua própria linha */
+    height: 2px; /* Altura do sublinhado */
+    width: 0; /* Largura inicial zero */
+    background: linear-gradient(90deg, var(--primary), var(--accent)); /* Gradiente para o sublinhado */
+    transition: width 0.3s; /* Transição suave para a largura */
+    position: absolute; /* Posiciona o sublinhado */
+    left: 0;
+    bottom: -4px;
 }
 
 .nav-links a:hover {
-    color: var(--primary);
+    color: var(--primary); /* Altera a cor do texto ao passar o mouse */
 }
 
 .nav-links a:hover::after {
-    width: 100%;
+    width: 100%; /* Expande o sublinhado para 100% da largura do link */
 }
 
+/*
+ * Estilos Gerais para Seções
+ */
 .section {
-    padding: 100px 20px 60px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    min-height: auto;
-    animation: fadeIn 1.2s cubic-bezier(.77,0,.18,1);
+    padding: 100px 20px 60px 20px; /* Preenchimento superior (ajusta para navbar), lateral e inferior */
+    max-width: 900px; /* Largura máxima do conteúdo da seção */
+    margin: 0 auto; /* Centraliza a seção horizontalmente */
+    min-height: auto; /* Altura mínima automática */
+    animation: fadeIn 1.2s cubic-bezier(.77,0,.18,1); /* Animação de entrada para as seções */
 }
 
+/* Ajuste de margem inferior para a seção de contato */
 #contact {
     margin-bottom: 50px;
 }
 
+/* Animação para a entrada das seções */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0; /* Invisível no início */
+        transform: translateY(40px); /* Começa um pouco abaixo */
+    }
+    to {
+        opacity: 1; /* Totalmente visível */
+        transform: translateY(0); /* Posição final */
+    }
 }
 
+/*
+ * Seção Home
+ */
 .home-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 90vh;
-    background: linear-gradient(120deg, var(--secondary) 60%, var(--accent) 100%);
-    box-shadow: var(--shadow);
-    border-radius: 0 0 40px 40px;
+    display: flex; /* Flexbox para centralizar o conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    min-height: 90vh; /* Altura mínima de 90% da viewport */
+    background: linear-gradient(120deg, var(--secondary) 60%, var(--accent) 100%); /* Gradiente de fundo */
+    box-shadow: var(--shadow); /* Sombra */
+    border-radius: 0 0 40px 40px; /* Bordas inferiores arredondadas */
 }
 
 .home-content {
-    text-align: center;
-    animation: popIn 1.2s cubic-bezier(.77,0,.18,1);
+    text-align: center; /* Centraliza o texto */
+    animation: popIn 1.2s cubic-bezier(.77,0,.18,1); /* Animação de entrada */
 }
 
+/* Animação para o conteúdo da seção Home */
 @keyframes popIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0; /* Invisível no início */
+        transform: scale(0.95); /* Começa ligeiramente menor */
+    }
+    to {
+        opacity: 1; /* Totalmente visível */
+        transform: scale(1); /* Escala original */
+    }
 }
 
 .highlight {
-    color: var(--primary);
-    text-shadow: 0 0 10px var(--primary);
-    font-family: 'Orbitron', sans-serif;
+    color: var(--primary); /* Cor de destaque */
+    text-shadow: 0 0 10px var(--primary); /* Sombra para o texto de destaque */
+    font-family: 'Orbitron', sans-serif; /* Fonte específica */
 }
 
 .subtitle {
-    margin-top: 1rem;
-    font-size: 1.3rem;
-    color: var(--accent);
-    letter-spacing: 1px;
+    margin-top: 1rem; /* Margem superior */
+    font-size: 1.3rem; /* Tamanho da fonte */
+    color: var(--accent); /* Cor de acento */
+    letter-spacing: 1px; /* Espaçamento entre letras */
 }
 
+/*
+ * Títulos das Seções (H2)
+ * Aplica estilos consistentes para todos os títulos h2 das seções principais.
+ */
 .about-section h2,
 .experience-section h2,
 .projects-section h2,
 .contact-section h2,
-.technology-section h2{
-    font-family: 'Orbitron', sans-serif;
-    color: var(--primary);
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    letter-spacing: 1px;
+.technology-section h2 {
+    font-family: 'Orbitron', sans-serif; /* Fonte específica */
+    color: var(--primary); /* Cor primária */
+    margin-bottom: 1.5rem; /* Margem inferior */
+    font-size: 2rem; /* Tamanho da fonte */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    text-align: center; /* Centraliza os títulos */
 }
 
+/*
+ * Seção Sobre Mim
+ * (Não há estilos específicos além do H2 e do botão de CV)
+ */
+
+/*
+ * Seção Experiência Profissional
+ */
 .timeline {
-    list-style: none;
-    padding-left: 0;
+    list-style: none; /* Remove marcadores de lista */
+    padding-left: 0; /* Remove preenchimento esquerdo padrão */
 }
 
 .timeline li {
-    background: var(--card);
-    margin-bottom: 1.5rem;
-    padding: 1rem 1.5rem;
-    border-left: 4px solid var(--primary);
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    animation: fadeIn 1.2s cubic-bezier(.77,0,.18,1);
+    background: var(--card); /* Cor de fundo do cartão de experiência */
+    margin-bottom: 1.5rem; /* Margem inferior entre os itens */
+    padding: 1rem 1.5rem; /* Preenchimento interno */
+    border-left: 4px solid var(--primary); /* Borda esquerda de destaque */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: var(--shadow); /* Sombra */
+    animation: fadeIn 1.2s cubic-bezier(.77,0,.18,1); /* Animação de entrada */
 }
 
 .job-title {
-    color: var(--accent);
-    font-weight: bold;
+    color: var(--accent); /* Cor de acento para o título do cargo */
+    font-weight: bold; /* Negrito */
 }
 
 .company {
-    color: var(--primary);
-    font-weight: bold;
+    color: var(--primary); /* Cor primária para o nome da empresa */
+    font-weight: bold; /* Negrito */
 }
 
 .period {
-    float: right;
-    color: #aaa;
-    font-size: 0.95rem;
+    float: right; /* Flutua o período para a direita */
+    color: #aaa; /* Cor mais clara para o período */
+    font-size: 0.95rem; /* Tamanho da fonte */
 }
 
+/*
+ * Seção Projetos
+ */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
+    display: grid; /* Layout de grid para os cartões de projeto */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Colunas responsivas */
+    gap: 2rem; /* Espaçamento entre os cartões */
 }
 
 .project-card {
-    background: var(--card);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid var(--primary);
-    animation: fadeIn 1.2s cubic-bezier(.77,0,.18,1);
+    background: var(--card); /* Cor de fundo do cartão do projeto */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: var(--shadow); /* Sombra */
+    padding: 1.5rem; /* Preenchimento interno */
+    margin-bottom: 1.5rem; /* Margem inferior */
+    display: flex; /* Flexbox para o conteúdo do cartão */
+    justify-content: center; /* Centraliza horizontalmente */
+    flex-wrap: wrap; /* Permite que o conteúdo quebre linha */
+    align-items: center; /* Centraliza verticalmente */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transições suaves para hover */
+    border: 1px solid var(--primary); /* Borda primária */
+    animation: fadeIn 1.2s cubic-bezier(.77,0,.18,1); /* Animação de entrada */
 }
 
 .project-card a {
-    margin-top: 30px;
-    border-radius: 10px;
+    margin-top: 30px; /* Margem superior para o link/imagem */
+    border-radius: 10px; /* Bordas arredondadas para o link */
 }
 
 .project-card h3 {
-    margin: 1.5rem;
+    margin: 1.5rem; /* Margem para o título do projeto */
 }
 
 .project-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 32px 0 var(--primary);
+    transform: translateY(-8px) scale(1.03); /* Efeito de elevação e leve aumento ao passar o mouse */
+    box-shadow: 0 8px 32px 0 var(--primary); /* Sombra mais intensa ao passar o mouse */
 }
 
-
+/*
+ * Seção Tecnologia (Carrossel)
+ */
 .carousel-container {
-      width: 1000px;
-      max-width: 100%;
-      overflow: hidden;
-      position: relative;
-      padding: 20px 0;
-      margin-top: 40px;
-      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    }
-
-    .carousel-track {
-        display: flex;
-        gap: 30px;
-        animation: scrollLeft 60s linear infinite;
-        width: max-content; /* importante para suportar o conteúdo duplicado */
-    }
-
-
-    .slide {
-      min-width: 150px;
-      flex-shrink: 0;
-      background: #fff;
-      border-radius: 12px;
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.6);
-    }
-
-    .slide img {
-      width: 100px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    @keyframes scrollLeft {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+    width: 1000px; /* Largura fixa para o container do carrossel */
+    max-width: 100%; /* Garante que não ultrapasse a largura do pai */
+    overflow: hidden; /* Esconde conteúdo que transborda */
+    position: relative; /* Para posicionamento do mask-image */
+    padding: 20px 0; /* Preenchimento superior e inferior */
+    margin-top: 40px; /* Margem superior */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Efeito de fade nas bordas */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Compatibilidade WebKit */
 }
 
+.carousel-track {
+    display: flex; /* Layout flexbox para os slides */
+    gap: 30px; /* Espaçamento entre os slides */
+    animation: scrollLeft 60s linear infinite; /* Animação de rolagem contínua */
+    width: max-content; /* Importante para suportar o conteúdo duplicado no carrossel infinito */
+}
 
+.slide {
+    min-width: 150px; /* Largura mínima de cada slide */
+    flex-shrink: 0; /* Previne que os slides encolham */
+    background: #fff; /* Fundo branco para cada slide */
+    border-radius: 12px; /* Bordas arredondadas */
+    padding: 10px; /* Preenchimento interno */
+    display: flex; /* Flexbox para centralizar a imagem */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    box-shadow: 0 0 10px rgba(0,0,0,0.6); /* Sombra */
+}
 
+.slide img {
+    width: 100px; /* Largura da imagem da tecnologia */
+    height: auto; /* Altura automática */
+    object-fit: contain; /* Redimensiona a imagem para caber sem cortar */
+}
+
+/* Animação de rolagem infinita do carrossel */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0); /* Começa na posição normal */
+    }
+    100% {
+        transform: translateX(-50%); /* Rola 50% para a esquerda (devido ao conteúdo duplicado) */
+    }
+}
+
+/*
+ * Seção Contato
+ */
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 400px;
-    margin: 0 auto;
+    display: flex; /* Layout flexbox para os campos do formulário */
+    flex-direction: column; /* Coloca os campos em coluna */
+    gap: 1rem; /* Espaçamento entre os campos */
+    max-width: 400px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário */
 }
 
 .contact-form input,
 .contact-form textarea {
-    background: var(--secondary);
-    border: 1px solid var(--primary);
-    border-radius: 6px;
-    padding: 0.8rem;
-    color: var(--text);
-    font-size: 1rem;
-    resize: none;
-    transition: border 0.3s;
+    background: var(--secondary); /* Cor de fundo dos campos */
+    border: 1px solid var(--primary); /* Borda primária */
+    border-radius: 6px; /* Bordas arredondadas */
+    padding: 0.8rem; /* Preenchimento interno */
+    color: var(--text); /* Cor do texto */
+    font-size: 1rem; /* Tamanho da fonte */
+    resize: none; /* Desabilita o redimensionamento da textarea */
+    transition: border 0.3s; /* Transição suave para a borda no foco */
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border: 1.5px solid var(--accent);
-    outline: none;
+    border: 1.5px solid var(--accent); /* Borda mais grossa e com cor de acento no foco */
+    outline: none; /* Remove o contorno padrão do navegador */
 }
 
 .contact-form button {
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: var(--bg);
-    border: none;
-    border-radius: 6px;
-    padding: 0.9rem;
-    font-size: 1.1rem;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: var(--shadow);
-    transition: background 0.3s, color 0.3s;
+    background: linear-gradient(90deg, var(--primary), var(--accent)); /* Gradiente de fundo */
+    color: var(--bg); /* Cor do texto do botão */
+    border: none; /* Remove borda */
+    border-radius: 6px; /* Bordas arredondadas */
+    padding: 0.9rem; /* Preenchimento interno */
+    font-size: 1.1rem; /* Tamanho da fonte */
+    font-family: 'Orbitron', sans-serif; /* Fonte específica */
+    font-weight: bold; /* Negrito */
+    cursor: pointer; /* Cursor de ponteiro */
+    box-shadow: var(--shadow); /* Sombra */
+    transition: background 0.3s, color 0.3s; /* Transição suave para hover */
 }
 
 .contact-form button:hover {
-    background: linear-gradient(90deg, var(--accent), var(--primary));
-    color: var(--text);
-}
-
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1100;
-}
-.menu-toggle .bar {
-    width: 28px;
-    height: 4px;
-    background: var(--primary);
-    margin: 4px 0;
-    border-radius: 2px;
-    transition: 0.4s;
-}
-
-.profile-pic-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.5rem;
-}
-.profile-pic {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid var(--primary);
-    box-shadow: 0 4px 24px 0 var(--primary), 0 2px 8px 0 rgba(0,0,0,0.18);
-    background: var(--secondary);
-    transition: box-shadow 0.3s;
-}
-.profile-pic:hover {
-    box-shadow: 0 8px 32px 0 var(--accent), 0 2px 8px 0 rgba(0,0,0,0.22);
-}
-
-footer {
-    width: 100%;
-    height: 3rem;
-    padding-top: 15px;
-    background-color: var(--secondary);
-    box-shadow: var(--shadow);
-    display: flex;
-    justify-content: center; 
-}
-
-/* Botão de Currículo */
-.btn-cv {
-    display: inline-block;
-    margin-top: 1.2rem;
-    padding: 0.7rem 1.5rem;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    color: var(--bg);
-    border: none;
-    border-radius: 6px;
-    font-size: 1.1rem;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: var(--shadow);
-    transition: background 0.3s, color 0.3s, transform 0.2s;
-}
-.btn-cv:hover {
-    background: linear-gradient(90deg, var(--accent), var(--primary));
-    color: var(--text);
-    transform: scale(1.05);
+    background: linear-gradient(90deg, var(--accent), var(--primary)); /* Inverte o gradiente no hover */
+    color: var(--text); /* Altera a cor do texto no hover */
 }
 
 /* Redes Sociais na seção de contato */
 .contact-social {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1.5rem;
-}
-.contact-social img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.2s;
-}
-.contact-social a:hover img {
-    transform: scale(1.15);
+    display: flex; /* Flexbox para os ícones */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 2rem; /* Espaçamento entre os ícones */
+    margin-top: 1.5rem; /* Margem superior */
 }
 
+.contact-social img {
+    width: 40px; /* Largura dos ícones */
+    height: 40px; /* Altura dos ícones */
+    transition: transform 0.2s; /* Transição suave para o efeito de hover */
+}
+
+.contact-social a:hover img {
+    transform: scale(1.15); /* Aumenta o tamanho do ícone ao passar o mouse */
+}
+
+/*
+ * Botão de Currículo
+ */
+.btn-cv {
+    display: inline-block; /* Comporta-se como um bloco mas permite texto e alinhamento */
+    margin-top: 1.2rem; /* Margem superior */
+    padding: 0.7rem 1.5rem; /* Preenchimento interno */
+    background: linear-gradient(90deg, var(--primary), var(--accent)); /* Gradiente de fundo */
+    color: var(--bg); /* Cor do texto do botão */
+    border: none; /* Remove borda */
+    border-radius: 6px; /* Bordas arredondadas */
+    font-size: 1.1rem; /* Tamanho da fonte */
+    font-family: 'Orbitron', sans-serif; /* Fonte específica */
+    font-weight: bold; /* Negrito */
+    text-decoration: none; /* Remove sublinhado */
+    box-shadow: var(--shadow); /* Sombra */
+    transition: background 0.3s, color 0.3s, transform 0.2s; /* Transições suaves para hover */
+}
+
+.btn-cv:hover {
+    background: linear-gradient(90deg, var(--accent), var(--primary)); /* Inverte o gradiente no hover */
+    color: var(--text); /* Altera a cor do texto no hover */
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do botão no hover */
+}
+
+/*
+ * Imagem de Perfil
+ */
+.profile-pic-container {
+    display: flex; /* Flexbox para centralizar a imagem */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin-bottom: 1.5rem; /* Margem inferior */
+}
+
+.profile-pic {
+    width: 140px; /* Largura da imagem */
+    height: 140px; /* Altura da imagem */
+    object-fit: cover; /* Recorta a imagem para preencher o contêiner */
+    border-radius: 50%; /* Torna a imagem circular */
+    border: 3px solid var(--primary); /* Borda primária */
+    box-shadow: 0 4px 24px 0 var(--primary), 0 2px 8px 0 rgba(0,0,0,0.18); /* Sombra */
+    background: var(--secondary); /* Cor de fundo */
+    transition: box-shadow 0.3s; /* Transição suave para a sombra no hover */
+}
+
+.profile-pic:hover {
+    box-shadow: 0 8px 32px 0 var(--accent), 0 2px 8px 0 rgba(0,0,0,0.22); /* Altera a sombra no hover */
+}
+
+/*
+ * Menu Hamburger (Mobile)
+ */
+.menu-toggle {
+    display: none; /* Esconde por padrão (visível apenas em telas menores) */
+    flex-direction: column; /* Coloca as barras em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    width: 40px; /* Largura do botão */
+    height: 40px; /* Altura do botão */
+    background: none; /* Sem fundo */
+    border: none; /* Sem borda */
+    cursor: pointer; /* Cursor de ponteiro */
+    z-index: 1100; /* Fica acima da navbar */
+}
+
+.menu-toggle .bar {
+    width: 28px; /* Largura das barras */
+    height: 4px; /* Altura das barras */
+    background: var(--primary); /* Cor das barras */
+    margin: 4px 0; /* Margem vertical entre as barras */
+    border-radius: 2px; /* Bordas arredondadas */
+    transition: 0.4s; /* Transição para o efeito de toggle (manipulado por JS) */
+}
+
+/*
+ * Rodapé
+ */
+footer {
+    width: 100%; /* Largura total */
+    height: 3rem; /* Altura fixa */
+    padding-top: 15px; /* Preenchimento superior */
+    background-color: var(--secondary); /* Cor de fundo */
+    box-shadow: var(--shadow); /* Sombra */
+    display: flex; /* Flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+/*
+ * Media Queries (Responsividade)
+ * Adapta o layout para diferentes tamanhos de tela.
+ */
+
+/* Telas menores que 900px (tablet e mobile) */
 @media (max-width: 900px) {
     .menu-toggle {
-        display: flex;
+        display: flex; /* Exibe o botão de menu toggle */
     }
+
     .nav-links {
-        position: fixed;
+        position: fixed; /* Fixa a navegação lateral */
         top: 0;
-        right: -200px;
-        height: 100vh;
-        width: 220px;
-        background: var(--secondary);
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 2rem;
-        padding: 90px 2rem 2rem 2rem;
-        box-shadow: -2px 0 24px 0 rgba(0,0,0,0.25);
-        transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(.77,0,.18,1);
-        z-index: 1050;
+        right: -200px; /* Esconde a navegação para a direita */
+        height: 100vh; /* Ocupa a altura total da viewport */
+        width: 220px; /* Largura da navegação lateral */
+        background: var(--secondary); /* Cor de fundo */
+        flex-direction: column; /* Itens em coluna */
+        align-items: flex-start; /* Alinha itens à esquerda */
+        justify-content: flex-start; /* Alinha itens ao topo */
+        gap: 2rem; /* Espaçamento entre os links */
+        padding: 90px 2rem 2rem 2rem; /* Preenchimento para afastar do topo e das bordas */
+        box-shadow: -2px 0 24px 0 rgba(0,0,0,0.25); /* Sombra lateral */
+        transform: translateX(100%); /* Esconde a navegação inicialmente */
+        transition: transform 0.4s cubic-bezier(.77,0,.18,1); /* Transição para a abertura/fechamento */
+        z-index: 1050; /* Garante que fique acima da navbar */
     }
+
+    /* Classe para abrir a navegação lateral (adicionada por JS) */
     .nav-links.open {
-        right: 0;
-        transform: translateX(0);
+        right: 0; /* Move para a posição visível */
+        transform: translateX(0); /* Desliza para a posição final */
     }
+
     .navbar {
-        padding: 1rem 1rem;
+        padding: 1rem 1rem; /* Ajusta o preenchimento da navbar */
     }
 }
 
+/* Telas menores que 700px (mobile) */
 @media (max-width: 700px) {
     .navbar {
-        flex-direction: row;
-        gap: 0;
-        padding: 0.7rem 0.5rem;
-    }
-    .logo {
-        font-size: 1.3rem;
-    }
-    .section {
-        padding: 80px 16px 30px 16px;
+        flex-direction: row; /* Mantém o layout em linha, mas com ajustes */
+        gap: 0; /* Remove o gap */
+        padding: 0.7rem 0.5rem; /* Ajusta o preenchimento da navbar */
     }
 
+    .logo {
+        font-size: 1.3rem; /* Diminui o tamanho do logo */
+    }
+
+    .section {
+        padding: 80px 16px 30px 16px; /* Ajusta o preenchimento das seções */
+    }
+
+    /* Altura automática para a seção 'Sobre' */
     #about {
         height: auto;
-
     }
 
     .about-section {
         height: auto;
     }
+
     .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Uma coluna para os projetos */
     }
+
     .home-section {
-        min-height: 70vh;
-        border-radius: 0 0 20px 20px;
-        padding-left: 28px;
-        padding-right: 28px;
+        min-height: 70vh; /* Diminui a altura mínima da seção home */
+        border-radius: 0 0 20px 20px; /* Ajusta o arredondamento */
+        padding-left: 28px; /* Ajusta o preenchimento lateral */
+        padding-right: 28px; /* Ajusta o preenchimento lateral */
     }
+
+    /* Diminui o tamanho dos títulos H2 para mobile */
     .about-section h2,
     .experience-section h2,
     .projects-section h2,
     .contact-section h2 {
         font-size: 1.3rem;
     }
-    .timeline li, .project-card {
+
+    /* Ajusta o preenchimento e margem para itens da linha do tempo e cartões de projeto */
+    .timeline li,
+    .project-card {
         padding: 1.1rem 1.1rem;
         margin-bottom: 1.2rem;
     }
+
+    /* Ajusta o formulário de contato para telas menores */
     .contact-form {
-        max-width: 98vw;
-        padding: 1.1rem 0.5rem;
+        max-width: 98vw; /* Largura máxima quase total da viewport */
+        padding: 1.1rem 0.5rem; /* Ajusta o preenchimento */
     }
-    .contact-form input, .contact-form textarea {
-        font-size: 0.95rem;
-        padding: 0.8rem;
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.95rem; /* Diminui o tamanho da fonte dos campos */
+        padding: 0.8rem; /* Ajusta o preenchimento dos campos */
     }
+
     .contact-form button {
-        font-size: 1rem;
-        padding: 0.9rem;
+        font-size: 1rem; /* Diminui o tamanho da fonte do botão */
+        padding: 0.9rem; /* Ajusta o preenchimento do botão */
     }
+
+    /* Diminui o tamanho da imagem de perfil */
     .profile-pic {
         width: 100px;
         height: 100px;
     }
+
     .profile-pic-container {
-        margin-bottom: 1rem;
+        margin-bottom: 1rem; /* Ajusta a margem inferior */
     }
-} 
+}
 
+/* Telas menores que 768px (específico para o carrossel de tecnologia) */
 @media (max-width: 768px) {
-      .carousel-container {
-      width: 380px;
-      padding: 10px 0;
-      mask-image: none;
-      -webkit-mask-image: none;
-    
-      background: linear-gradient(to right, #111 0%, transparent 10%, transparent 90%, #111 100%);
-      }
-
-      .carousel-track {
-        gap: 20px;
-      }
-
-      .slide {
-        min-width: 100px;
-        padding: 8px;
-      }
-
-      .slide img {
-        width: 70px;
-      }
+    .carousel-container {
+        width: 380px; /* Largura específica para o carrossel */
+        padding: 10px 0; /* Ajusta o preenchimento */
+        mask-image: none; /* Remove o efeito de fade nas bordas */
+        -webkit-mask-image: none; /* Remove o efeito de fade nas bordas (WebKit) */
+        /* Adiciona um gradiente de fundo sutil para as bordas para simular o efeito do mask-image removido */
+        background: linear-gradient(to right, #111 0%, transparent 10%, transparent 90%, #111 100%);
     }
+
+    .carousel-track {
+        gap: 20px; /* Ajusta o espaçamento entre os slides do carrossel */
+    }
+
+    .slide {
+        min-width: 100px; /* Diminui a largura mínima dos slides */
+        padding: 8px; /* Ajusta o preenchimento */
+    }
+
+    .slide img {
+        width: 70px; /* Diminui o tamanho das imagens de tecnologia */
+    }
+}
