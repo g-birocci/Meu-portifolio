@@ -79,3 +79,40 @@ document.getElementById('link-en').addEventListener('click', function(e) {
   e.preventDefault();
   window.location.href = 'index-en.html';  // link para a página em EN
 });
+
+// Confirmação de envio do formulario
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.contact-form');
+    const msg = document.getElementById('mensagem-sucesso');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault(); // Impede o envio padrão do formulário
+
+      const dados = new FormData(form);
+
+      try {
+        await fetch(form.action, {
+          method: 'POST',
+          body: dados,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        // Mostrar mensagem de sucesso
+        msg.style.display = 'block';
+
+        // Limpar campos do formulário
+        form.reset();
+
+        // Esconder a mensagem após 5 segundos
+        setTimeout(() => {
+          msg.style.display = 'none';
+        }, 5000);
+
+      } catch (erro) {
+        alert('Erro ao enviar mensagem. Tente novamente.');
+        console.error(erro);
+      }
+    });
+  });
